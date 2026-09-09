@@ -6,7 +6,7 @@ import { WishlistProvider } from './context/WishlistContext';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ToastProvider>
         <CartProvider>
           <WishlistProvider>
