@@ -85,13 +85,7 @@ export const Navbar = () => {
               )}
             </Link>
             <Link
-              to="/shop"
-              className="text-sm text-foreground/80 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
-            >
-              Collections
-            </Link>
-            <Link
-              to="/"
+              to=""
               className="text-sm text-foreground/80 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
             >
               Featured
