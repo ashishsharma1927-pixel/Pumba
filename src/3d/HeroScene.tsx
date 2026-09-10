@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
@@ -73,18 +73,20 @@ export const HeroScene = () => {
             color="#3b82f6" 
           />
           
-          <SceneController />
-          
-          <Environment preset="city" />
-          
-          <ContactShadows 
-            position={[0, -2.5, 0]} 
-            opacity={0.4} 
-            scale={10} 
-            blur={2.5} 
-            far={4} 
-            color="#000000"
-          />
+          <Suspense fallback={null}>
+            <SceneController />
+            
+            <Environment preset="city" />
+            
+            <ContactShadows 
+              position={[0, -2.5, 0]} 
+              opacity={0.4} 
+              scale={10} 
+              blur={2.5} 
+              far={4} 
+              color="#000000"
+            />
+          </Suspense>
         </Canvas>
       </ThreeErrorBoundary>
     </div>

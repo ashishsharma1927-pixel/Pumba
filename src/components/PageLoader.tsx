@@ -23,7 +23,7 @@ export const PageLoader: React.FC = () => {
       </div>
 
       <p className="text-xs font-mono tracking-widest text-white/50 uppercase">
-        Loading Experience
+        Loading...
       </p>
       <span className="sr-only">Loading page content, please wait...</span>
     </div>

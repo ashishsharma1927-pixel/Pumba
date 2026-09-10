@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -13,6 +13,12 @@ export const HeadphoneModel: React.FC<HeadphoneModelProps> = ({ activeHotspot })
   const rightDriverRef = useRef<THREE.Mesh>(null);
   const headbandGlowRef = useRef<THREE.Mesh>(null);
   const batteryGlowRef = useRef<THREE.Mesh>(null);
+  
+  const { viewport } = useThree();
+  // Calculate responsive scale based on viewport width. 
+  // Makes it smaller for mobile screens to fit nicely, and larger for PC screens.
+  // Max scale is capped to 1.35 so it doesn't clip at the top of the frustum.
+  const responsiveScale = Math.min(1.35, Math.max(1.0, viewport.width * 0.15));
 
   useFrame((state) => {
     const time = state.clock.elapsedTime;
@@ -93,7 +99,8 @@ export const HeadphoneModel: React.FC<HeadphoneModelProps> = ({ activeHotspot })
 
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.4}>
-      <group ref={rootGroupRef} scale={1.25} position={[0, 0, 0]}>
+      {/* Shift Y down slightly (-0.6) to perfectly vertically center the headphones in the frustum */}
+      <group ref={rootGroupRef} scale={responsiveScale} position={[0, -0.6, 0]}>
         {/* ================= HEADBAND ARCH ================= */}
         {/* Outer Titanium Arch */}
         <mesh position={[0, 0.4, 0]} rotation={[0, 0, 0]} castShadow>

@@ -29,7 +29,7 @@ export const ProductShowcaseScene: React.FC<ProductShowcaseSceneProps> = ({
   }
 
   return (
-    <div className="w-full h-full min-h-[480px] sm:min-h-[560px] lg:min-h-[640px] relative">
+    <div className="w-full lg:w-[65%] h-full min-h-[480px] sm:min-h-[560px] lg:min-h-[640px] relative">
       <ThreeErrorBoundary
         fallback={
           <ThreeFallback
