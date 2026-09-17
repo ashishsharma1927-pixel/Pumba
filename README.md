@@ -50,6 +50,3 @@ A modern, interactive 3D e-commerce platform built with React, Three.js, and Fra
 
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have suggestions for improvements.
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
