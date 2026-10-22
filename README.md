@@ -1,3 +1,6 @@
+# Visit this link to watch demo 
+https://ashishsharma1927-pixel.github.io/Pumba/
+
 # Pumba (3D E-Commerce Platform)
 
 A modern, interactive 3D e-commerce platform built with React, Three.js, and Framer Motion. This project leverages the power of React Three Fiber to seamlessly integrate 3D models and animations into a React-based UI, providing a highly immersive shopping experience.
